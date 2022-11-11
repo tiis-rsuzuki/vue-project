@@ -1,10 +1,75 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="nav">
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link>
+  </div>
+  <v-app>
+    <v-system-bar>
+      <v-spacer></v-spacer>
+
+      <v-icon>mdi-square</v-icon>
+
+      <v-icon>mdi-circle</v-icon>
+
+      <v-icon>mdi-triangle</v-icon>
+    </v-system-bar>
+    <v-navigation-drawer v-model="drawer">
+      <v-sheet
+        color="indigo"
+        class="pa-4"
+      >
+        <v-avatar
+          class="mb-4"
+          color="grey-darken-1"
+          size="64"
+        ></v-avatar>
+
+        <div>SMIL Project</div>
+      </v-sheet>
+
+      <v-divider></v-divider>
+
+      <v-list>
+        <v-list-item
+          v-for="[icon, text, to] in links"
+          :key="icon"
+          :to="to"
+          link
+        >
+        <template v-slot:prepend>
+          <v-icon>{{ icon }}</v-icon>
+        </template>
+        <v-list-item-title>{{ text }}</v-list-item-title>
+        </v-list-item>
+      </v-list>
+    </v-navigation-drawer>
+
+    <router-view/>
+
+
+  </v-app>
+  
+  
 </template>
+
+<script>
+export default {
+    data: () => ({
+      cards: ['Recently added orders', 'Deadline is coming up soon'],
+      drawer: null,
+      links: [
+        // ['mdi-inbox-arrow-down', 'Inbox'],
+        // ['mdi-send', 'Send'],
+        // ['mdi-delete', 'Trash'],
+        // ['mdi-alert-octagon', 'Spam'],
+        ['mdi-home', 'Home', '/'],
+        ['mdi-shopping', 'Order', '/'],
+        ['mdi-pencil-ruler', 'Design', '/about'],
+        ['mdi-hammer-screwdriver', 'Part/Bom', '/about'],
+      ],
+    }),
+  }
+</script>
 
 <style>
 #app {
@@ -15,16 +80,16 @@
   color: #2c3e50;
 }
 
-nav {
+#nav {
   padding: 30px;
 }
 
-nav a {
+#nav a {
   font-weight: bold;
   color: #2c3e50;
 }
 
-nav a.router-link-exact-active {
+#nav a.router-link-exact-active {
   color: #42b983;
 }
 </style>
