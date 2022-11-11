@@ -12,7 +12,7 @@
 
     <v-navigation-drawer v-model="drawer">
       <v-sheet
-        color="grey-lighten-4"
+        color="indigo"
         class="pa-4"
       >
         <!-- <v-avatar
