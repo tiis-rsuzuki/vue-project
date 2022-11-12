@@ -4,7 +4,14 @@
         class="py-8 px-6"
         fluid
       >
-        <v-row>
+      <v-row class="justify-end">
+        <v-col cols="1">
+            <v-btn icon color="secondary" size="x-large" v-on:click="order">
+                <v-icon icon="mdi-plus"></v-icon>
+            </v-btn>
+        </v-col>
+      </v-row>
+      <v-row>
           <v-col
             v-for="card in cards"
             :key="card"
@@ -16,7 +23,7 @@
                 <template v-for="n in 6" :key="n">
                   <v-list-item>
                     <template v-slot:prepend>
-                      <v-avatar color="primary"></v-avatar>
+                      <v-avatar color="secondary"></v-avatar>
                     </template>
 
                     <v-list-item-title>Order {{ n }}</v-list-item-title>
@@ -39,12 +46,17 @@
             </v-card>
           </v-col>
         </v-row>
-      </v-container>
-      </v-main>
+    </v-container>
+    </v-main>
   </template>
   
   <script>
     export default {
+        methods: {
+            order(){
+                this.$router.push('/order')
+            }
+        },
     data: () => ({
       cards: ['Recently added orders', 'Deadline is coming up soon'],
       drawer: null,
