@@ -1,8 +1,8 @@
 <template>
-  <div id="nav">
+  <!-- <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
-  </div>
+  </div> -->
   <v-app>
     <v-system-bar>
       <v-spacer></v-spacer>
@@ -18,13 +18,13 @@
         color="indigo"
         class="pa-4"
       >
-        <v-avatar
+        <!-- <v-avatar
           class="mb-4"
           color="grey-darken-1"
           size="64"
-        ></v-avatar>
+        ></v-avatar> -->
 
-        <div>SMIL Project</div>
+        <h1>SMIL Project</h1>
       </v-sheet>
 
       <v-divider></v-divider>
@@ -58,12 +58,8 @@ export default {
       cards: ['Recently added orders', 'Deadline is coming up soon'],
       drawer: null,
       links: [
-        // ['mdi-inbox-arrow-down', 'Inbox'],
-        // ['mdi-send', 'Send'],
-        // ['mdi-delete', 'Trash'],
-        // ['mdi-alert-octagon', 'Spam'],
         ['mdi-home', 'Home', '/'],
-        ['mdi-shopping', 'Order', '/'],
+        ['mdi-shopping', 'Order', '/orders'],
         ['mdi-pencil-ruler', 'Design', '/about'],
         ['mdi-hammer-screwdriver', 'Part/Bom', '/about'],
       ],
@@ -76,7 +72,7 @@ export default {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
 }
 
