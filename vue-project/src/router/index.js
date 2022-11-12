@@ -1,7 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import OrderList from '../views/OrderList.vue'
-import OrderBoard from '../views/OrderBoard.vue'
+import OrderDetail from '../views/OrderDetail.vue'
+
+import PartBoard from '../views/PartBoard.vue'
 
 
 const routes = [
@@ -26,7 +28,12 @@ const routes = [
   {
     path: '/order',
     name: 'order',
-    component: OrderBoard
+    component: OrderDetail
+  },
+  {
+    path: '/parts',
+    name: 'parts',
+    component: PartBoard
   },
 ]
 

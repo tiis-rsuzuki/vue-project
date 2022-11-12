@@ -1,5 +1,5 @@
 <template>
-   <v-main class="bg-dark-lighten-1">
+    <v-main class="bg-dark-lighten-1">
     <v-container
         class="py-8 px-6"
         fluid
@@ -57,9 +57,9 @@
                 this.$router.push('/order')
             }
         },
-    data: () => ({
-      cards: ['Recently added orders', 'Deadline is coming up soon'],
-      drawer: null,
-    }),
+        data: () => ({
+            cards: ['Recently added orders', 'Deadline is coming up soon'],
+            drawer: null,
+        }),
   }
   </script>

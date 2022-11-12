@@ -61,7 +61,7 @@ export default {
         ['mdi-home', 'Home', '/'],
         ['mdi-shopping', 'Order', '/orders'],
         ['mdi-pencil-ruler', 'Design', '/about'],
-        ['mdi-hammer-screwdriver', 'Part/Bom', '/about'],
+        ['mdi-hammer-screwdriver', 'Part/Bom', '/parts'],
       ],
     }),
   }
