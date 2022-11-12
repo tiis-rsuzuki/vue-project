@@ -1,9 +1,5 @@
 <template>
     <v-main class="bg-dark-lighten-1">
-    <v-container
-        class="py-8 px-6"
-        fluid
-      >
       <v-table
         fixed-header
         height="500px"
@@ -12,16 +8,19 @@
     <thead>
       <tr>
         <th class="text-left">
-          projectNo
+          ProjectNo
         </th>
         <th class="text-left">
-          customer
+          Status
         </th>
         <th class="text-left">
-          deadline
+          Customer
         </th>
         <th class="text-left">
-          manager
+          Deadline
+        </th>
+        <th class="text-left">
+          Manager
         </th>
       </tr>
     </thead>
@@ -31,13 +30,44 @@
         :key="order.projectNo"
       >
         <td>{{ order.projectNo }}</td>
+        <td v-if="order.status== 'process'">
+          <v-btn
+            rounded
+            small
+            text
+            color="primary"
+            dark
+          >
+            {{ order.status }}
+          </v-btn>
+        </td>
+        <td v-else-if="order.status== 'finished'">
+          <v-btn
+            rounded
+            small
+            color="blue-grey"
+            dark
+          >
+            {{ order.status }}
+          </v-btn>
+        </td>
+        <td v-else-if="order.status== 'inquiry'">
+          <v-btn
+            rounded
+            small
+            color="warning"
+            dark
+          >
+            {{ order.status }}
+          </v-btn>
+        </td>
         <td>{{ order.customer }}</td>
         <td>{{ order.deadline }}</td>
         <td>{{ order.manager }}</td>
       </tr>
     </tbody>
   </v-table>
-    </v-container>
+
     </v-main>
   </template>
   
@@ -48,72 +78,84 @@
         orders: [
           {
             projectNo: '202211121700',
+            status: 'process',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'finished',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'finished',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'process',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
           },
           {
             projectNo: '202211121700',
+            status: 'inquiry',
             customer: 'amcd',
             deadline: '2022/12/24',
             manager: 'Smith'
@@ -125,5 +167,7 @@
 </script>
 
 <style scoped>
-
+th{
+  font-weight: bold;
+}
 </style>
