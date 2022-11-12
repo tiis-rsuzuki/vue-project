@@ -22,6 +22,9 @@
         <th class="text-left">
           Manager
         </th>
+        <th class="text-left">
+          Action
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -64,6 +67,8 @@
         <td>{{ order.customer }}</td>
         <td>{{ order.deadline }}</td>
         <td>{{ order.manager }}</td>
+        <td><router-link :to="{ path: 'order', query: { id: order.projectNo }}">View Detail</router-link>     
+        </td>
       </tr>
     </tbody>
   </v-table>
@@ -167,7 +172,5 @@
 </script>
 
 <style scoped>
-th{
-  font-weight: bold;
-}
+
 </style>
