@@ -53,7 +53,7 @@
                 variant="flat"
                 :disabled="!isEditing"
                 color="secondary"
-                @click="save"
+                @click="get_order"
             >
                 Save
             </v-btn>
@@ -72,6 +72,9 @@
 </template>
 
 <script>
+ import order_service from '@/service/order'
+
+
   export default {
     data () {
       return {
@@ -104,6 +107,13 @@
         this.isEditing = !this.isEditing
         this.hasSaved = true
       },
+      //api call
+      get_order (){
+        alert(this.$route.query.id);
+        let res = order_service.show(this.$route.query.id);
+        alert(res);
+        console.log(res);
+      }
     },
   }
 </script>
