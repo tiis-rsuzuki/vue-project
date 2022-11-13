@@ -6,6 +6,7 @@
     "local-serve": "vue-cli-service serve --mode local",
     "dev-serve": "vue-cli-service serve --mode development",
     "prod-serve": "vue-cli-service serve --mode production",
+    "local-build": "vue-cli-service build --mode local",
     "dev-build": "vue-cli-service build --mode development",
     "prod-build": "vue-cli-service build --mode production"
   },
