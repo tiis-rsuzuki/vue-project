@@ -77,97 +77,27 @@
   </template>
   
   <script>
+  import order_service from '@/service/order' 
+
   export default {
     data () {
       return {
-        orders: [
-          {
-            projectNo: '202211121700',
-            status: 'process',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'finished',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'finished',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'process',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-          {
-            projectNo: '202211121700',
-            status: 'inquiry',
-            customer: 'amcd',
-            deadline: '2022/12/24',
-            manager: 'Smith'
-          },
-        ],
+        orders: []
       }
     },
+    methods: {
+      fetch_orders: function(){
+        const self = this
+        order_service.show().then(function(res){
+          console.log(res);
+          console.log(res.status);
+          self.orders = res.data;
+        });
+      }
+    },
+    mounted: function(){
+      this.fetch_orders()
+    }
   }
 </script>
 
