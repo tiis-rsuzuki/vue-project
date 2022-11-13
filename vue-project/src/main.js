@@ -9,6 +9,9 @@ import VueAxios from 'vue-axios'
 
 loadFonts()
 
+const ENV = process.env.NODE_ENV
+console.log(ENV)
+
 createApp(App).use(router)
   .use(vuetify)
   .use(VueAxios, axios)
