@@ -1,21 +1,22 @@
 <template>
-  <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-  </div> -->
   <v-app>
-    <v-system-bar>
+    <div>
+    <v-toolbar
+      dark
+      prominent
+      image="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
+    >
+      <v-app-bar-nav-icon></v-app-bar-nav-icon>
       <v-spacer></v-spacer>
 
-      <v-icon>mdi-square</v-icon>
-
-      <v-icon>mdi-circle</v-icon>
-
-      <v-icon>mdi-triangle</v-icon>
-    </v-system-bar>
+      <v-btn icon>
+        <v-icon>mdi-export</v-icon>
+      </v-btn>
+    </v-toolbar>
+  </div>
+  <div>
     <v-navigation-drawer v-model="drawer">
       <v-sheet
-        color="indigo"
         class="pa-4"
       >
         <!-- <v-avatar
@@ -24,7 +25,7 @@
           size="64"
         ></v-avatar> -->
 
-        <h1>SMIL Project</h1>
+        <h1 class="title">SMIL Project</h1>
       </v-sheet>
 
       <v-divider></v-divider>
@@ -44,6 +45,8 @@
       </v-list>
     </v-navigation-drawer>
 
+  </div>
+    
     <router-view/>
 
 
@@ -87,5 +90,12 @@ export default {
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.title {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
 }
 </style>
