@@ -20,6 +20,7 @@
             </v-btn>
             </v-col>
         </v-row>
+        <div class="my-5" />
         <v-card class="overflow-hidden" dark>
             <v-card-text>
             <v-text-field
@@ -88,7 +89,7 @@
         ],
         customers: [
           { name: 'Sales',  id: 1 },
-          { name: 'Desing',  id: 2 },
+          { name: 'Design',  id: 2 },
           { name: 'Production', id: 3 },
         ],
       }

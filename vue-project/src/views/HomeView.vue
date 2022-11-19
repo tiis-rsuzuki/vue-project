@@ -3,14 +3,18 @@
     <v-container
         class="py-8 px-6"
         fluid>
-        <h1>This is home Page</h1>
-        
+        <h2>Sales trend</h2>
+        <graph></graph>
     </v-container>
     </v-main>
 </template>
 
 <script>
-  export default {
-    data: () => ({ drawer: null }),
-  }
+import Graph from '../components/GraphChart.vue';
+
+export default {
+  components: {
+    Graph,
+  },
+}
 </script>

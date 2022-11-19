@@ -3,7 +3,7 @@
     <v-container
         class="py-8 px-6"
         fluid>
-        <h1>This is about Page</h1>
+        <h1>This is design Page</h1>
         
     </v-container>
     </v-main>

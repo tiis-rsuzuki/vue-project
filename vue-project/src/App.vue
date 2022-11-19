@@ -60,7 +60,7 @@ export default {
       links: [
         ['mdi-home', 'Home', '/'],
         ['mdi-shopping', 'Order', '/orders'],
-        ['mdi-pencil-ruler', 'Design', '/about'],
+        ['mdi-pencil-ruler', 'Design', '/design'],
         ['mdi-hammer-screwdriver', 'Part/Bom', '/parts'],
       ],
     }),
