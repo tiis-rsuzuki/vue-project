@@ -25,6 +25,7 @@
             <v-card-text>
             <v-text-field
                 :disabled="!isEditing"
+                v-model="order.projectNo"
                 color="grey"
                 label="Project Name"
             ></v-text-field>
@@ -32,6 +33,7 @@
                 :disabled="!isEditing"
                 :items="states"
                 :custom-filter="customFilter"
+                v-model="order_state"
                 color="grey"
                 item-title="name"
                 item-value="id"
@@ -92,9 +94,10 @@
           { name: 'Design',  id: 2 },
           { name: 'Production', id: 3 },
         ],
+        order: [],
+        order_state: 1
       }
     },
-
     methods: {
       customFilter (item, queryText) {
         const textOne = item.name.toLowerCase()
@@ -110,11 +113,16 @@
       },
       //api call
       get_order (){
-        alert(this.$route.query.id);
-        let res = order_service.show(this.$route.query.id);
-        alert(res);
-        console.log(res);
+        const self = this
+        order_service.show(this.$route.query.id).then(function(res){
+          console.log(res);
+          console.log(res.status);
+          self.order = res.data;
+        });
       }
     },
+    mounted: function(){
+      this.get_order()
+    }
   }
 </script>

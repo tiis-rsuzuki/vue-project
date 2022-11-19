@@ -95,8 +95,9 @@ router.get('/', function(req, res, next) {
         // res.send('Order List respond with a resource');
         res.json(orders)
     }else{
-        //単一検索
-        res.send('Order id respond with a resource ' + req.query.id);
+        let order = orders.find(order => order.projectNo == req.query.id);
+        console.log(order);
+        res.json(order)
     }
     
   });
