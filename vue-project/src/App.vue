@@ -65,6 +65,7 @@ export default {
         ['mdi-shopping', 'Order', '/orders'],
         ['mdi-pencil-ruler', 'Design', '/design'],
         ['mdi-hammer-screwdriver', 'Part/Bom', '/parts'],
+        ['mdi-bell', 'Notifications', '/notifications'],
       ],
     }),
   }

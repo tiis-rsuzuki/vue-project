@@ -5,6 +5,7 @@ import DesignTaskList from '../views/DesignTaskList.vue'
 import OrderDetail from '../views/OrderDetail.vue'
 
 import PartBoard from '../views/PartBoard.vue'
+import Notifications from '../views/NotificationView.vue'
 
 
 const routes = [
@@ -32,6 +33,11 @@ const routes = [
     path: '/parts',
     name: 'parts',
     component: PartBoard
+  },
+  {
+    path: '/notifications',
+    name: 'notifications',
+    component: Notifications
   },
 ]
 
