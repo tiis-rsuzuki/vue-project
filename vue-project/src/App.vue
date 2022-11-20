@@ -15,6 +15,11 @@
     </v-toolbar>
   </div>
   <div>
+    <router-link
+        :to="'/login?redirect=' + $route.fullPath"
+        v-if="$route.path !== '/login'"
+       >Login</router-link
+      >
     <v-navigation-drawer v-model="drawer">
       <v-sheet
         class="pa-4"
