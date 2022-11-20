@@ -33,7 +33,7 @@
         :key="order.projectNo"
       >
         <td>{{ order.projectNo }}</td>
-        <td v-if="order.status== 'process'">
+        <td v-if="order.status== 1">
           <v-btn
             rounded
             small
@@ -41,27 +41,27 @@
             color="primary"
             dark
           >
-            {{ order.status }}
+            PROCESS
           </v-btn>
         </td>
-        <td v-else-if="order.status== 'finished'">
+        <td v-else-if="order.status== 3">
           <v-btn
             rounded
             small
             color="blue-grey"
             dark
           >
-            {{ order.status }}
+            FINISHED
           </v-btn>
         </td>
-        <td v-else-if="order.status== 'inquiry'">
+        <td v-else-if="order.status== 2">
           <v-btn
             rounded
             small
             color="warning"
             dark
           >
-            {{ order.status }}
+            INQUIRY
           </v-btn>
         </td>
         <td>{{ order.customer }}</td>

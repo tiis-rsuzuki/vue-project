@@ -33,7 +33,7 @@
                 :disabled="!isEditing"
                 :items="states"
                 :custom-filter="customFilter"
-                v-model="order_state"
+                v-model="order.status"
                 color="grey"
                 item-title="name"
                 item-value="id"
@@ -43,6 +43,7 @@
                 :disabled="!isEditing"
                 :items="customers"
                 :custom-filter="customFilter"
+                v-model="order.customer"
                 color="grey"
                 item-title="name"
                 item-value="id"
@@ -90,12 +91,11 @@
           { name: 'Received', id: 3 },
         ],
         customers: [
-          { name: 'Sales',  id: 1 },
-          { name: 'Design',  id: 2 },
-          { name: 'Production', id: 3 },
+          { name: 'Sales',  id: 'SALES' },
+          { name: 'Design',  id: 'DESIGN' },
+          { name: 'Production', id: 'PRODUCTION' },
         ],
         order: [],
-        order_state: 1
       }
     },
     methods: {
